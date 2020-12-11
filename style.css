@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+nav {    
+  position: fixed !important;
+  width: 100%;
+  z-index: 1;
+}
+nav .logo {
+  margin: 0 20px;
+  font-size: 20px;
+}
+nav form button {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin-left: -45px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+nav form button:focus {
+  outline: none;
+}
+.block {
+  width: 100%;
+  height: 6px;
+}
+#header {
+  margin-top: 50px;
+  /* border: 5px solid green; */
+  height: 230px;
+  width: 100%;
+}
+.banner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: orangered;
+}
+/* .banner li {
+  width: 10%;
+  border: 1px solid black;
+  list-style: none;
+} */
+.banner .fa-arrow-left{
+  width: 30px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 20px;
+  top: 140px;
+  /* border: 1px solid black; */
+  cursor: pointer;
+  opacity: 0.5;
+}
+.banner .fa-arrow-right{
+  width: 30px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  top: 140px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.timer {
+  display: flex;
+  justify-content: left;
+  align-items: center;  
+  background-color: black;
+  width: 100%;
+  height: 30px;
+  color: #FF0000;
+}
+.timer :first-child {
+  margin-left: 20px;
+}
+
+main {
+  background-color: white;
+  width: 95%;
+  
+}
+.category {
+  position: fixed;
+  background-color: #F0F0F0;
+  width: 150px;
+  left: 20px;
+  top: 330px;
+  z-index: 1;
+  border: 1px solid #F0F0F0;
+}
+.category li {
+  list-style: none;
+  margin: 5px 0 5px 10px;
+}
+.goTop {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 40px;
+  right: 0;
+  width: 5%;
+  background-color: hotpink;
+  z-index: 1;
+}
+.productList {
+  background-color: #F0F0F0;
+  width: 80%;
+  margin-left: 16%;
+  display: flex;
+  justify-content: left;
+  flex-flow: row wrap;
+}
+.productList .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 20px;
+}
+.productCard {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-items: center;
+  font-family: copperplate;
+}
+.productCard .cardBody {
+  margin-left: 50px;
+}
+.modal {
+  margin-top: 25vh;
+}
