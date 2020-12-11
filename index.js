@@ -62,7 +62,7 @@
     next('prev')
     resetTimer()
   }
-
+  // 前後一張
   function next(direction) {
     if (direction === 'next') {
       index++
@@ -80,9 +80,8 @@
       slide[i].classList.remove('active')
     }
     slide[index].classList.add('active')
-    console.log(index);
   }
-  // 循環播放
+  // 重設循環播放
   var timer = setInterval(autoPlay, 3000);
   function resetTimer() {
     // 停止 timer
@@ -90,7 +89,7 @@
     // 重新啟動
     timer = setInterval(autoPlay, 3000)
   }
-
+  // 循環播放
   function autoPlay() {
     next('next')
   }
