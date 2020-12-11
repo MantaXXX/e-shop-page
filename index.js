@@ -1,6 +1,6 @@
 (function () {
   const productList = document.querySelector('.productList')
-  const banner = document.querySelector('.banner')
+  const slider = document.querySelector('.slider')
   const base_URL = 'https://lighthouse-user-api.herokuapp.com'
   const indexAPI = base_URL + '/api/v1/users/'
   const productName = document.querySelector('#name')
@@ -47,7 +47,53 @@
   }
   countdownTimer(deadline)
 
-  // banner
+  // slides
+  const slide = document.querySelector('.slider-items').children
+  const nextSlide = document.querySelector('.right-slide')
+  const prevSlide = document.querySelector('.left-slide')
+  const totalSlide = slide.length
+  let index = 0
+
+  nextSlide.onclick = function () {
+    next('next')
+    resetTimer()
+  }
+  prevSlide.onclick = function () {
+    next('prev')
+    resetTimer()
+  }
+
+  function next(direction) {
+    if (direction === 'next') {
+      index++
+      if (index === totalSlide) {
+        index = 0
+      }
+    } else {
+      if (index === 0) {
+        index = totalSlide - 1
+      } else {
+        index--
+      }
+    }
+    for (let i = 0; i < slide.length; i++) {
+      slide[i].classList.remove('active')
+    }
+    slide[index].classList.add('active')
+    console.log(index);
+  }
+  // 循環播放
+  var timer = setInterval(autoPlay, 3000);
+  function resetTimer() {
+    // 停止 timer
+    clearInterval(timer)
+    // 重新啟動
+    timer = setInterval(autoPlay, 3000)
+  }
+
+  function autoPlay() {
+    next('next')
+  }
 
   // 抓取 API 資料
   axios
